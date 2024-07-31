@@ -13,6 +13,7 @@ import styles from './tailwind.css?url'
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
 export function Layout({ children }: { children: React.ReactNode }) {
+	console.log('Test')
 	return (
 		<html lang="ja">
 			<head>
