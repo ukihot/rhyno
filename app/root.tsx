@@ -1,17 +1,16 @@
-import {
-	Links,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-} from '@remix-run/react'
-import type { LinksFunction } from '@remix-run/node'
-import stylesheet from '~/tailwind.css?url'
 import { NextUIProvider } from '@nextui-org/react'
+import { LinksFunction } from '@remix-run/node'
+import {
+	Meta,
+	Links,
+	ScrollRestoration,
+	Scripts,
+	Outlet,
+} from '@remix-run/react'
 
-export const links: LinksFunction = () => [
-	{ rel: 'stylesheet', href: stylesheet },
-]
+import styles from './tailwind.css?url'
+
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
