@@ -104,6 +104,37 @@ const typescriptConfig = {
 		'import/no-named-as-default': 'off',
 		'import/no-named-as-default-member': 'off',
 		'no-console': 'error',
+		'import/order': [
+			'error',
+			{
+				groups: [
+					'builtin',
+					'external',
+					'parent',
+					'sibling',
+					'index',
+					'object',
+					'type',
+				],
+				pathGroups: [
+					{
+						pattern: '{react,react-dom/**,react-router-dom}',
+						group: 'builtin',
+						position: 'before',
+					},
+					{
+						pattern: '~/**',
+						group: 'parent',
+						position: 'before',
+					},
+				],
+				pathGroupsExcludedImportTypes: ['builtin'],
+				alphabetize: {
+					order: 'asc',
+				},
+				'newlines-between': 'always',
+			},
+		],
 	},
 }
 
